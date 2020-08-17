@@ -1,10 +1,11 @@
 'use strict';
 
-let game = function(min, max) {   
-    console.log('game: ', game);
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    Math.floor(Math.random() * (max - min + 1)) +min;
+let game = function() {
+    let getRandomNum = function(min, max) {
+        Math.floor(Math.random() * max + min);
+    };
+
+    let botNum = getRandomNum(1, 100);
     
     let answerCheck = function() {
         prompt('Угадай число от 1 до 100');
@@ -14,7 +15,7 @@ let game = function(min, max) {
         };
 
         let start = function() {
-            answerCheck() = prompt('Угадай число от 1 до 100');
+            answerCheck = prompt('Угадай число от 1 до 100');
         
             while (!isNumber(answerCheck())) {
                 answerCheck() = prompt('Введи число!');
@@ -23,17 +24,18 @@ let game = function(min, max) {
         start();
         
         let resultOutput = function() {
-            if (game() > answerCheck()) {
+            if (botNum > answerCheck()) {
                 console.log('Загаданное число больше');
-            } else if (game() < answerCheck()) {
+            } else if (botNum < answerCheck()) {
                 console.log('Загаданное число меньше');
-            } else if (game() = answerCheck()) {
+            } else if (botNum = answerCheck()) {
                 console.log('Поздравляю, Вы угадали!!!');
             }
-            return game
+            return botNum
         };
         resultOutput();
+        return answerCheck;
     };
     answerCheck();
 };
-game(1, 100);
+game();
