@@ -19,22 +19,24 @@ let game = function() {
             alert('Спасибо за игру!');
             return;
         }
-
-        if (userAmount !== null) {
-            ('' || !isNumber(userAmount));    
-            alert('Введи число!');
-            answerCheck();
+        if (userAmount !== null){
+            if (userAmount === '' || !isNumber(userAmount)) {
+                alert('Введи число!');
+                answerCheck();
+            }   
             userAmount = +userAmount;
-        } else if (botNum > userAmount) {
-            console.log(userAmount);
-            alert('Загаданное число больше');
-            answerCheck();
-        } else if (botNum < userAmount) {
-            alert('Загаданное число меньше');
-            answerCheck();
-        } else if (botNum === userAmount) {
-            alert('Поздравляю, Вы угадали!');
-        }
+            if (botNum > userAmount) {
+                console.log(userAmount);
+                alert('Загаданное число больше');
+                answerCheck();
+            } else if (botNum < userAmount) {
+                alert('Загаданное число меньше');
+                answerCheck();
+            } else if (botNum === userAmount) {
+                alert('Поздравляю, Вы угадали!');
+                return
+            }
+        };
     };
     answerCheck();
     // console.dir(answerCheck);
