@@ -21,11 +21,10 @@ let game = function() {
         }
 
         if (userAmount !== null) {
-            userAmount = +userAmount;
-        }
-        if (!isNumber(userAmount)) {
+            ('' || !isNumber(userAmount));    
             alert('Введи число!');
             answerCheck();
+            userAmount = +userAmount;
         } else if (botNum > userAmount) {
             console.log(userAmount);
             alert('Загаданное число больше');
@@ -35,7 +34,7 @@ let game = function() {
             answerCheck();
         } else if (botNum === userAmount) {
             alert('Поздравляю, Вы угадали!');
-        }    
+        }
     };
     answerCheck();
     // console.dir(answerCheck);
